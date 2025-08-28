@@ -1,6 +1,6 @@
 # DATA
 dataset='CULane'
-data_root = DATA_ROOT
+data_root = "/content/dataset_14_8"
 
 # TRAIN
 epoch = 50
@@ -28,7 +28,7 @@ shp_loss_w = 0.0
 # EXP
 note = ''
 
-log_path = LOG_DIR
+log_path = "/content/ufld_logs"
 
 # FINETUNE or RESUME MODEL PATH
 finetune = "/content/Ultra-Fast-Lane-Detection/models/culane_18.pth"
