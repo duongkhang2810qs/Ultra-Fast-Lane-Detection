@@ -1,12 +1,12 @@
 # DATA
 dataset='CULane'
-data_root = None
+data_root = DATA_ROOT
 
 # TRAIN
 epoch = 50
 batch_size = 32
 optimizer = 'SGD'  #['SGD','Adam']
-learning_rate = 0.1
+learning_rate =  1e-4 #0.1
 weight_decay = 1e-4
 momentum = 0.9
 
@@ -28,10 +28,10 @@ shp_loss_w = 0.0
 # EXP
 note = ''
 
-log_path = None
+log_path = LOG_DIR
 
 # FINETUNE or RESUME MODEL PATH
-finetune = None
+finetune = "/content/Ultra-Fast-Lane-Detection/models/culane_18.pth"
 resume = None
 
 # TEST
