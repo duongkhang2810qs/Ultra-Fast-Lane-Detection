@@ -54,7 +54,7 @@ def calc_loss(loss_dict, results, logger, global_step):
 
 def train(net, data_loader, loss_dict, optimizer, scheduler,logger, epoch, metric_dict, use_aux):
     net.train()
-    progress_bar = dist_tqdm(train_loader)
+    progress_bar = dist_tqdm(train_loader, desc=f"Epoch {epoch+1}/{cfg.epoch}")
     t_data_0 = time.time()
     for b_idx, data_label in enumerate(progress_bar):
         t_data_1 = time.time()
@@ -150,5 +150,5 @@ if __name__ == "__main__":
 
         train(net, train_loader, loss_dict, optimizer, scheduler,logger, epoch, metric_dict, cfg.use_aux)
         
-        save_model(net, optimizer, epoch ,work_dir, distributed)
+        save_model(net, optimizer, epoch+1 ,work_dir, distributed)
     logger.close()
